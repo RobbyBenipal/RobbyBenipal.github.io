@@ -295,19 +295,39 @@ function initContactForm() {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    const endpoint = form.getAttribute('action');
     const btn = form.querySelector('button[type="submit"]');
     const originalText = btn.innerHTML;
 
-    // Disable form while "submitting"
+    // Disable form while sending.
     btn.innerHTML = '<span class="animate-spin">⟳</span> Sending...';
     btn.disabled = true;
     form.querySelectorAll('input, textarea').forEach(el => el.disabled = true);
 
-    // Simulate async send (replace with real endpoint when needed)
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      if (!endpoint) {
+        throw new Error('Missing form endpoint');
+      }
 
-    showToast('✅ Message sent! I\'ll get back to you soon.', 'success');
-    form.reset();
+      const formData = new FormData(form);
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json'
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error('Request failed');
+      }
+
+      showToast('✅ Message sent! I\'ll get back to you soon.', 'success');
+      form.reset();
+    } catch (error) {
+      showToast('Could not send message right now. Please email me directly.', 'error');
+      console.error('Contact form submission failed:', error);
+    }
 
     btn.innerHTML = originalText;
     btn.disabled = false;
