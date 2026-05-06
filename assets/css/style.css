@@ -37,12 +37,12 @@ body {
 }
 
 body.light {
-  --bg-dark: #f4f7fb;
-  --bg-card: #ffffff;
-  --bg-card-hover: #eef4ff;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --border-subtle: rgba(15, 23, 42, 0.12);
+  --bg-dark: #f8f3eb;
+  --bg-card: #fffdf9;
+  --bg-card-hover: #f6ede2;
+  --text-primary: #1f2937;
+  --text-secondary: #5f6b7a;
+  --border-subtle: rgba(120, 95, 72, 0.16);
   background-color: var(--bg-dark);
   color: var(--text-primary);
 }
@@ -58,7 +58,7 @@ body.light .text-gray-200 {
 }
 
 body.light .text-gray-300 {
-  color: #334155 !important;
+  color: #3f4b5b !important;
 }
 
 body.light .text-gray-400,
@@ -68,7 +68,7 @@ body.light .text-gray-600 {
 }
 
 body.light .border-white\/5 {
-  border-color: rgba(15, 23, 42, 0.08) !important;
+  border-color: rgba(120, 95, 72, 0.12) !important;
 }
 
 body.light .hover\:text-white:hover {
@@ -194,8 +194,8 @@ body.cursor-hover #cursor-follower {
 }
 
 body.light #navbar.scrolled {
-  background: rgba(244, 247, 251, 0.88);
-  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.08);
+  background: rgba(248, 243, 235, 0.9);
+  box-shadow: 0 1px 0 rgba(120, 95, 72, 0.08);
 }
 
 .nav-link {
@@ -251,8 +251,8 @@ body.light #navbar.scrolled {
 
 body.light .hero-grid {
   background-image:
-    linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(120, 95, 72, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 95, 72, 0.06) 1px, transparent 1px);
 }
 
 @keyframes gridPulse {
@@ -284,11 +284,11 @@ body.light .hero-grid {
 }
 
 body.light .hero-glow-1 {
-  background: radial-gradient(circle, rgba(0, 128, 255, 0.12) 0%, transparent 72%);
+  background: radial-gradient(circle, rgba(255, 214, 170, 0.28) 0%, transparent 72%);
 }
 
 body.light .hero-glow-2 {
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 236, 209, 0.34) 0%, transparent 70%);
 }
 
 @keyframes orbFloat {
@@ -378,13 +378,13 @@ body.light .hero-glow-2 {
 }
 
 body.light .btn-secondary {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 250, 243, 0.88);
   color: var(--blue);
-  border-color: rgba(0, 128, 255, 0.3);
+  border-color: rgba(0, 128, 255, 0.22);
 }
 
 body.light .btn-secondary:hover {
-  background: rgba(0, 128, 255, 0.08);
+  background: rgba(255, 243, 227, 0.95);
 }
 
 /* ---- Section Styles ---- */
@@ -456,8 +456,8 @@ section {
 }
 
 body.light .about-img-placeholder {
-  background: linear-gradient(135deg, #dbeafe, #eef2ff);
-  color: #475569;
+  background: linear-gradient(135deg, #fce7d6, #f8efe6);
+  color: #6b7280;
 }
 
 /* ---- Skills Section ---- */
@@ -491,7 +491,7 @@ body.light .about-img-placeholder {
 }
 
 body.light .skill-badge {
-  background: rgba(15, 23, 42, 0.03);
+  background: rgba(140, 110, 80, 0.05);
 }
 
 .skill-badge:hover {
@@ -511,7 +511,7 @@ body.light .skill-badge {
 }
 
 body.light .skill-bar-track {
-  background: rgba(15, 23, 42, 0.08);
+  background: rgba(140, 110, 80, 0.12);
 }
 
 .skill-bar-fill {
@@ -550,7 +550,7 @@ body.light .skill-bar-track {
 }
 
 body.light .project-img-placeholder {
-  background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+  background: linear-gradient(135deg, #fcebdd, #fff8f0);
 }
 
 .project-img-placeholder::before {
@@ -604,13 +604,13 @@ body.light .project-img-placeholder {
 }
 
 body.light .project-link-btn.github {
-  background: rgba(15, 23, 42, 0.04);
-  border-color: rgba(15, 23, 42, 0.1);
+  background: rgba(140, 110, 80, 0.05);
+  border-color: rgba(120, 95, 72, 0.14);
 }
 
 body.light .project-link-btn.github:hover {
-  background: rgba(15, 23, 42, 0.08);
-  border-color: rgba(15, 23, 42, 0.16);
+  background: rgba(140, 110, 80, 0.09);
+  border-color: rgba(120, 95, 72, 0.2);
 }
 
 .project-link-btn.demo {
@@ -763,7 +763,7 @@ body.light .project-link-btn.github:hover {
 }
 
 body.light .social-link {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 250, 243, 0.88);
 }
 
 .social-link:hover {
@@ -781,7 +781,7 @@ footer {
 }
 
 body.light footer {
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(253, 247, 239, 0.88);
 }
 
 /* ---- Keyframe Definitions ---- */
@@ -916,7 +916,7 @@ body.js-ready .fade-in-right.visible {
 }
 
 body.light #mobile-nav {
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(251, 246, 239, 0.97);
 }
 
 #mobile-nav.open {
@@ -978,7 +978,7 @@ body.light #theme-toggle::after {
 }
 
 body.light #toast {
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 10px 30px rgba(120, 95, 72, 0.12);
 }
 
 #toast.show {
@@ -1026,7 +1026,7 @@ body.light #toast {
 }
 
 body.light .stat-card {
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 252, 246, 0.84);
 }
 
 .stat-card:hover {
