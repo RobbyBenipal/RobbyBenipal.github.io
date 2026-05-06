@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build artifacts (keep assets/css/tailwind.css — that IS the built output)
+# node_modules is not needed since tailwind.css is pre-built and committed
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+npm-debug.log*
+*.log

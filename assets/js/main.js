@@ -7,6 +7,10 @@
 
 /* ---- Utility: wait for DOM ---- */
 document.addEventListener('DOMContentLoaded', () => {
+  // Enable animations immediately — all content is visible without this class,
+  // adding it opts-in to animation effects (progressive enhancement).
+  document.body.classList.add('js-ready');
+
   initCursor();
   initScrollProgress();
   initNavbar();

@@ -673,43 +673,92 @@ footer {
   background: rgba(0, 0, 0, 0.3);
 }
 
-/* ---- Animations ---- */
-.fade-in-up {
+/* ---- Keyframe Definitions ---- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ---- Base: all fade-in elements are VISIBLE by default ---- */
+/* Progressive enhancement: JS adds .js-ready to <body> which
+   enables animations. Without JS the content is always shown. */
+.fade-in-up,
+.fade-in-left,
+.fade-in-right {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---- Hero Animations (triggered when body.js-ready is set) ---- */
+body.js-ready #hero .fade-in-up,
+body.js-ready #hero .fade-in-left,
+body.js-ready #hero .fade-in-right {
   opacity: 0;
-  transform: translateY(30px);
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-duration: 0.7s;
+}
+
+body.js-ready #hero .fade-in-up    { animation-name: fadeInUp; }
+body.js-ready #hero .fade-in-left  { animation-name: fadeInLeft; }
+body.js-ready #hero .fade-in-right { animation-name: fadeInRight; }
+
+/* Hero stagger delays */
+body.js-ready #hero .delay-100 { animation-delay: 0.08s; }
+body.js-ready #hero .delay-200 { animation-delay: 0.16s; }
+body.js-ready #hero .delay-300 { animation-delay: 0.24s; }
+body.js-ready #hero .delay-400 { animation-delay: 0.32s; }
+body.js-ready #hero .delay-500 { animation-delay: 0.40s; }
+body.js-ready #hero .delay-600 { animation-delay: 0.48s; }
+
+/* ---- Scroll-triggered Animations (non-hero sections) ---- */
+/* body.js-ready enables hidden state; JS adds .visible to reveal */
+body.js-ready .fade-in-up {
+  opacity: 0;
+  transform: translateY(28px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.fade-in-up.visible {
+body.js-ready .fade-in-up.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.fade-in-left {
+body.js-ready .fade-in-left {
   opacity: 0;
-  transform: translateX(-30px);
+  transform: translateX(-28px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.fade-in-left.visible {
+body.js-ready .fade-in-left.visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-.fade-in-right {
+body.js-ready .fade-in-right {
   opacity: 0;
-  transform: translateX(30px);
+  transform: translateX(28px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.fade-in-right.visible {
+body.js-ready .fade-in-right.visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-/* Stagger delay classes */
-.delay-100 { transition-delay: 0.1s; }
-.delay-200 { transition-delay: 0.2s; }
+/* Stagger delay classes (for scroll-triggered transitions) */
+.delay-100 { transition-delay: 0.08s; }
+.delay-200 { transition-delay: 0.16s; }
 .delay-300 { transition-delay: 0.3s; }
 .delay-400 { transition-delay: 0.4s; }
 .delay-500 { transition-delay: 0.5s; }
