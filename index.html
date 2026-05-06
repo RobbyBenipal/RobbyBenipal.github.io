@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+       Robby Benipal — Software Engineer Portfolio
+       Hosted on GitHub Pages
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>Robby Benipal | Software Engineer & Full Stack Developer</title>
+  <meta name="description" content="Robby Benipal is a Software Engineer and Full Stack Developer based in Dallas/Denton, Texas. Specializing in C#, .NET, React, Azure, and modern web development." />
+  <meta name="keywords" content="Robby Benipal, Software Engineer, Full Stack Developer, C#, .NET, React, Azure, Blazor, Dallas, Texas, PACCAR" />
+  <meta name="author" content="Robby Benipal" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://robbybenipal.github.io/Portfolio-RobbyBenipal/" />
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Robby Benipal | Software Engineer" />
+  <meta property="og:description" content="Full Stack Developer specializing in C#, .NET, React & Azure. Based in Dallas/Denton, Texas." />
+  <meta property="og:url" content="https://robbybenipal.github.io/Portfolio-RobbyBenipal/" />
+  <meta property="og:image" content="https://robbybenipal.github.io/Portfolio-RobbyBenipal/assets/images/og-preview.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Robby Benipal | Software Engineer" />
+  <meta name="twitter:description" content="Full Stack Developer specializing in C#, .NET, React & Azure." />
+
+  <!-- Favicon (replace with real favicon) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='78' font-size='80'>💻</text></svg>" />
+
+  <!-- Tailwind CSS (Play CDN — switch to CLI build for production) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: {
+              900: '#0a0a0f',
+              800: '#0f0f1a',
+              700: '#111827',
+              600: '#1f2937',
+            },
+            cyan: { DEFAULT: '#00d4ff' },
+            blue: { DEFAULT: '#0080ff' },
+            purple: { DEFAULT: '#8b5cf6' },
+          },
+          fontFamily: {
+            sans: ['Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="bg-dark-900 text-gray-100 antialiased">
+
+  <!-- Custom Cursor -->
+  <div id="cursor" aria-hidden="true"></div>
+  <div id="cursor-follower" aria-hidden="true"></div>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Toast Notification -->
+  <div id="toast" role="alert" aria-live="polite"></div>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <header id="navbar" role="banner">
+    <nav class="container mx-auto" aria-label="Main navigation">
+      <div class="flex items-center justify-between h-16 md:h-20">
+
+        <!-- Logo / Brand -->
+        <a href="#hero" class="flex items-center gap-2 group" aria-label="Robby Benipal — Home">
+          <div class="w-9 h-9 rounded-lg flex items-center justify-center text-sm font-mono font-bold text-dark-900 relative overflow-hidden"
+               style="background: linear-gradient(135deg, #00d4ff, #8b5cf6);">
+            RB
+          </div>
+          <span class="font-bold text-lg tracking-tight">
+            <span class="gradient-text">Robby</span>
+            <span class="text-gray-300"> Benipal</span>
+          </span>
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <ul class="hidden md:flex items-center gap-8" role="list">
+          <li><a href="#about"      class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors" data-section="about">About</a></li>
+          <li><a href="#skills"     class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors" data-section="skills">Skills</a></li>
+          <li><a href="#projects"   class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors" data-section="projects">Projects</a></li>
+          <li><a href="#experience" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors" data-section="experience">Experience</a></li>
+          <li><a href="#contact"    class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors" data-section="contact">Contact</a></li>
+        </ul>
+
+        <!-- Right Actions -->
+        <div class="hidden md:flex items-center gap-4">
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" aria-label="Toggle theme" title="Toggle theme"></button>
+          <!-- Resume Button -->
+          <a href="assets/resume.pdf" download class="btn-secondary text-sm py-2 px-5">
+            <i class="fa-solid fa-file-arrow-down text-xs" aria-hidden="true"></i>
+            Resume
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button id="hamburger" class="hamburger md:hidden" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+
+      <!-- Mobile Nav Menu -->
+      <div id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+        <a href="#about"      class="nav-link py-3 text-gray-300 hover:text-white border-b border-white/5" data-section="about">About</a>
+        <a href="#skills"     class="nav-link py-3 text-gray-300 hover:text-white border-b border-white/5" data-section="skills">Skills</a>
+        <a href="#projects"   class="nav-link py-3 text-gray-300 hover:text-white border-b border-white/5" data-section="projects">Projects</a>
+        <a href="#experience" class="nav-link py-3 text-gray-300 hover:text-white border-b border-white/5" data-section="experience">Experience</a>
+        <a href="#contact"    class="nav-link py-3 text-gray-300 hover:text-white border-b border-white/5" data-section="contact">Contact</a>
+        <a href="assets/resume.pdf" download class="btn-primary mt-4 justify-center text-sm py-3">
+          <i class="fa-solid fa-file-arrow-down text-xs" aria-hidden="true"></i>
+          Download Resume
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section id="hero" aria-label="Hero introduction">
+      <!-- Animated Background -->
+      <canvas id="particles-canvas" aria-hidden="true"></canvas>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-glow-1" aria-hidden="true"></div>
+      <div class="hero-glow-2" aria-hidden="true"></div>
+
+      <div class="container mx-auto hero-content w-full">
+        <div class="max-w-4xl mx-auto text-center">
+
+          <!-- Status Badge -->
+          <div class="fade-in-up inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-widest uppercase mb-8"
+               style="background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.2); color: #00d4ff;">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse inline-block"></span>
+            Open to new opportunities
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="fade-in-up delay-100 text-5xl md:text-7xl lg:text-8xl font-black leading-none tracking-tight mb-6">
+            <span class="block text-white">Hi, I'm</span>
+            <span class="gradient-text block mt-1">Robby Benipal</span>
+          </h1>
+
+          <!-- Typing Animation Subtitle -->
+          <div class="fade-in-up delay-200 flex items-center justify-center gap-2 text-xl md:text-2xl font-mono font-medium text-gray-300 mb-6 h-10">
+            <span class="text-cyan-400">›</span>
+            <span id="typing-text" aria-live="polite"></span>
+            <span id="typing-cursor" aria-hidden="true"></span>
+          </div>
+
+          <!-- Professional Summary -->
+          <p class="fade-in-up delay-300 text-base md:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed mb-10">
+            Software Engineer at <strong class="text-gray-200">PACCAR Dynacraft</strong> crafting robust full-stack solutions
+            with <strong class="text-gray-200">C#, .NET, React</strong> and <strong class="text-gray-200">Azure</strong>.
+            Based in Dallas / Denton, Texas — building systems that scale.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="fade-in-up delay-400 flex flex-wrap items-center justify-center gap-4 mb-16">
+            <a href="#projects" class="btn-primary">
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+              View Projects
+            </a>
+            <a href="assets/resume.pdf" download class="btn-secondary">
+              <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+              Download Resume
+            </a>
+            <a href="#contact" class="btn-secondary">
+              <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+              Contact Me
+            </a>
+          </div>
+
+          <!-- Stats Row -->
+          <div class="fade-in-up delay-500 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+            <div class="stat-card">
+              <div class="stat-number" data-count="5" data-suffix="+">0+</div>
+              <div class="text-xs text-gray-500 mt-1 font-medium uppercase tracking-wider">Years Exp</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-count="10" data-suffix="+">0+</div>
+              <div class="text-xs text-gray-500 mt-1 font-medium uppercase tracking-wider">Projects</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-count="15" data-suffix="+">0+</div>
+              <div class="text-xs text-gray-500 mt-1 font-medium uppercase tracking-wider">Technologies</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-count="100" data-suffix="%">0%</div>
+              <div class="text-xs text-gray-500 mt-1 font-medium uppercase tracking-wider">Committed</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#about" class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 hover:text-cyan-400 transition-colors text-xs tracking-widest uppercase" aria-label="Scroll to About section">
+        <span>Scroll</span>
+        <i class="fa-solid fa-chevron-down animate-bounce" aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <!-- ============================================================
+         ABOUT SECTION
+         ============================================================ -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container mx-auto">
+        <div class="text-center mb-16">
+          <span class="section-tag fade-in-up">Who I Am</span>
+          <h2 id="about-heading" class="section-title fade-in-up delay-100">About Me</h2>
+          <div class="section-divider fade-in-up delay-200"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          <!-- Profile Image -->
+          <div class="fade-in-left flex justify-center lg:justify-end">
+            <div class="about-img-wrapper">
+              <!--
+                CUSTOMIZE: Replace the placeholder below with your actual photo:
+                <img src="assets/images/profile.jpg" alt="Robby Benipal" class="about-img-placeholder" style="object-fit: cover;" />
+              -->
+              <div class="about-img-placeholder">
+                <i class="fa-solid fa-user text-4xl text-gray-600" aria-hidden="true"></i>
+                <span class="text-gray-600 text-xs">Add profile photo<br/>assets/images/profile.jpg</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- About Content -->
+          <div class="fade-in-right">
+            <div class="space-y-5 text-gray-400 leading-relaxed">
+              <p class="text-lg text-gray-200 font-medium">
+                I'm a passionate Software Engineer with expertise in building scalable, enterprise-grade applications across the full stack.
+              </p>
+              <p>
+                Currently working as a <strong class="text-gray-200">Software Developer III at PACCAR Dynacraft</strong>, I design and maintain manufacturing systems, internal tooling, and data-driven dashboards that power real-world production lines.
+              </p>
+              <p>
+                My core stack revolves around <strong class="text-cyan-400">C# and .NET</strong> on the backend, <strong class="text-cyan-400">React and Blazor</strong> on the frontend, and <strong class="text-cyan-400">Azure</strong> for cloud infrastructure. I thrive in Agile environments where collaboration and continuous improvement are the norm.
+              </p>
+              <p>
+                Beyond work, I love building personal projects that solve real problems — from community platforms to vehicle management apps. I'm always exploring new technologies and contributing to open source.
+              </p>
+            </div>
+
+            <!-- Quick Facts -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+              <div class="flex items-center gap-3 text-sm">
+                <span class="text-cyan-400"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+                <span class="text-gray-300">Dallas / Denton, Texas</span>
+              </div>
+              <div class="flex items-center gap-3 text-sm">
+                <span class="text-cyan-400"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>
+                <span class="text-gray-300">PACCAR Dynacraft</span>
+              </div>
+              <div class="flex items-center gap-3 text-sm">
+                <span class="text-cyan-400"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
+                <span class="text-gray-300">Computer Science</span>
+              </div>
+              <div class="flex items-center gap-3 text-sm">
+                <span class="text-cyan-400"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+                <span class="text-gray-300">Open to opportunities</span>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex items-center gap-3 mt-8">
+              <a href="https://github.com/RobbyBenipal" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub profile">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+              <a href="https://linkedin.com/in/robbybenipal" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn profile">
+                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              </a>
+              <a href="https://twitch.tv/robbybenipal" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitch channel">
+                <i class="fa-brands fa-twitch" aria-hidden="true"></i>
+              </a>
+              <a href="mailto:robby@benipal.dev" class="social-link" aria-label="Send email">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SKILLS SECTION
+         ============================================================ -->
+    <section id="skills" style="background: rgba(255,255,255,0.01);" aria-labelledby="skills-heading">
+      <div class="container mx-auto">
+        <div class="text-center mb-16">
+          <span class="section-tag fade-in-up">What I Work With</span>
+          <h2 id="skills-heading" class="section-title fade-in-up delay-100">Technical Skills</h2>
+          <div class="section-divider fade-in-up delay-200"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Frontend -->
+          <div class="skill-card fade-in-up">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg"
+                   style="background: rgba(0,212,255,0.1); color: #00d4ff;">
+                <i class="fa-solid fa-display" aria-hidden="true"></i>
+              </div>
+              <h3 class="font-bold text-white text-lg">Frontend</h3>
+            </div>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-300">React.js</span>
+                  <span class="text-gray-500">Advanced</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-300">Blazor</span>
+                  <span class="text-gray-500">Advanced</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-300">JavaScript / TypeScript</span>
+                  <span class="text-gray-500">Advanced</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-300">HTML5 / CSS3</span>
+                  <span class="text-gray-500">Expert</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92"></div></div>
+              </div>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="skill-badge">Tailwind CSS</span>
+                <span class="skill-badge">SASS</span>
+                <span class="skill-badge">Redux</span>
+                <span class="skill-badge">Next.js</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="skill-card fade-in-up delay-100">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg"
+                   style="background: rgba(0,128,255,0.1); color: #0080ff;">
+                <i class="fa-solid fa-server" aria-hidden="true"></i>
+              </div>
+              <h3 class="font-bold text-white text-lg">Backend</h3>
+            </div>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-300">C# / .NET</span>
+                  <span class="text-gray-500">Expert</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-300">ASP.NET Core / Web API</span>
+                  <span class="text-gray-500">Expert</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-300">SQL Server</span>
+                  <span class="text-gray-500">Advanced</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-300">Node.js</span>
+                  <span class="text-gray-500">Intermediate</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+              </div>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="skill-badge">REST APIs</span>
+                <span class="skill-badge">SignalR</span>
+                <span class="skill-badge">Entity Framework</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cloud & DevOps -->
+          <div class="skill-card fade-in-up delay-200">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg"
+                   style="background: rgba(139,92,246,0.1); color: #8b5cf6;">
+                <i class="fa-solid fa-cloud" aria-hidden="true"></i>
+              </div>
+              <h3 class="font-bold text-white text-lg">Cloud & DevOps</h3>
+            </div>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-300">Microsoft Azure</span>
+                  <span class="text-gray-500">Advanced</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="83"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-300">CI/CD Pipelines</span>
+                  <span class="text-gray-500">Advanced</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-300">Git / GitHub</span>
+                  <span class="text-gray-500">Expert</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-300">Docker</span>
+                  <span class="text-gray-500">Intermediate</span>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
+              </div>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="skill-badge">Azure DevOps</span>
+                <span class="skill-badge">GitHub Actions</span>
+                <span class="skill-badge">IIS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div class="skill-card fade-in-up delay-100">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg"
+                   style="background: rgba(0,212,255,0.1); color: #00d4ff;">
+                <i class="fa-solid fa-database" aria-hidden="true"></i>
+              </div>
+              <h3 class="font-bold text-white text-lg">Databases</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-badge">SQL Server</span>
+              <span class="skill-badge">PostgreSQL</span>
+              <span class="skill-badge">MySQL</span>
+              <span class="skill-badge">MongoDB</span>
+              <span class="skill-badge">Redis</span>
+              <span class="skill-badge">CosmosDB</span>
+              <span class="skill-badge">SSRS</span>
+              <span class="skill-badge">SSIS</span>
+            </div>
+          </div>
+
+          <!-- Tools & Practices -->
+          <div class="skill-card fade-in-up delay-200">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg"
+                   style="background: rgba(0,128,255,0.1); color: #0080ff;">
+                <i class="fa-solid fa-wrench" aria-hidden="true"></i>
+              </div>
+              <h3 class="font-bold text-white text-lg">Tools</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-badge">Visual Studio</span>
+              <span class="skill-badge">VS Code</span>
+              <span class="skill-badge">Jira</span>
+              <span class="skill-badge">Figma</span>
+              <span class="skill-badge">Postman</span>
+              <span class="skill-badge">SSMS</span>
+              <span class="skill-badge">Swagger</span>
+              <span class="skill-badge">xUnit</span>
+            </div>
+          </div>
+
+          <!-- Methodologies -->
+          <div class="skill-card fade-in-up delay-300">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg"
+                   style="background: rgba(139,92,246,0.1); color: #8b5cf6;">
+                <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+              </div>
+              <h3 class="font-bold text-white text-lg">Methodologies</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-badge">Agile / Scrum</span>
+              <span class="skill-badge">TDD</span>
+              <span class="skill-badge">REST API Design</span>
+              <span class="skill-badge">Microservices</span>
+              <span class="skill-badge">Clean Architecture</span>
+              <span class="skill-badge">SOLID Principles</span>
+              <span class="skill-badge">Code Review</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROJECTS SECTION
+         ============================================================ -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <div class="container mx-auto">
+        <div class="text-center mb-16">
+          <span class="section-tag fade-in-up">What I've Built</span>
+          <h2 id="projects-heading" class="section-title fade-in-up delay-100">Featured Projects</h2>
+          <div class="section-divider fade-in-up delay-200"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Project 1: Vehicle Maintenance Tracking App -->
+          <article class="project-card fade-in-up" aria-label="Vehicle Maintenance Tracking App">
+            <div class="project-img-placeholder">
+              <span class="project-icon text-5xl" aria-hidden="true">🚗</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white mb-2">Vehicle Maintenance Tracker</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                A full-stack application for tracking vehicle maintenance schedules, service history, and reminders. Features dashboards for multiple vehicles with cost analytics.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">.NET</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">SQL Server</span>
+                <span class="tech-tag">Azure</span>
+              </div>
+              <div class="flex gap-3">
+                <a href="https://github.com/RobbyBenipal" target="_blank" rel="noopener noreferrer" class="project-link-btn github" aria-label="View source on GitHub">
+                  <i class="fa-brands fa-github text-xs" aria-hidden="true"></i>
+                  GitHub
+                </a>
+                <!-- Replace '#' with the actual live URL when deployed -->
+                <a href="#" class="project-link-btn demo" aria-label="View live demo (coming soon)">
+                  <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: BhangraHub -->
+          <article class="project-card fade-in-up delay-100" aria-label="BhangraHub">
+            <div class="project-img-placeholder">
+              <span class="project-icon text-5xl" aria-hidden="true">🎵</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white mb-2">BhangraHub</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                A community platform for the Bhangra dance community to discover events, share videos, connect with teams, and collaborate on performances across North America.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Azure</span>
+                <span class="tech-tag">Tailwind</span>
+              </div>
+              <div class="flex gap-3">
+                <a href="https://github.com/RobbyBenipal" target="_blank" rel="noopener noreferrer" class="project-link-btn github" aria-label="View source on GitHub">
+                  <i class="fa-brands fa-github text-xs" aria-hidden="true"></i>
+                  GitHub
+                </a>
+                <a href="#" class="project-link-btn demo" aria-label="View live demo (coming soon)">
+                  <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: CultureLink -->
+          <article class="project-card fade-in-up delay-200" aria-label="CultureLink">
+            <div class="project-img-placeholder">
+              <span class="project-icon text-5xl" aria-hidden="true">🌐</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white mb-2">CultureLink</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                A social networking platform bridging cultural communities with event discovery, cultural resources, and real-time discussion boards for diverse groups.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="tech-tag">Blazor</span>
+                <span class="tech-tag">ASP.NET Core</span>
+                <span class="tech-tag">SignalR</span>
+                <span class="tech-tag">SQL Server</span>
+              </div>
+              <div class="flex gap-3">
+                <a href="https://github.com/RobbyBenipal" target="_blank" rel="noopener noreferrer" class="project-link-btn github" aria-label="View source on GitHub">
+                  <i class="fa-brands fa-github text-xs" aria-hidden="true"></i>
+                  GitHub
+                </a>
+                <a href="#" class="project-link-btn demo" aria-label="View live demo (coming soon)">
+                  <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Manufacturing Dashboard System -->
+          <article class="project-card fade-in-up delay-100" aria-label="Manufacturing Dashboard System">
+            <div class="project-img-placeholder">
+              <span class="project-icon text-5xl" aria-hidden="true">🏭</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white mb-2">Manufacturing Dashboard System</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                Real-time production monitoring dashboard for manufacturing operations. Tracks KPIs, equipment status, and quality metrics with automated alerting.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">Blazor</span>
+                <span class="tech-tag">SignalR</span>
+                <span class="tech-tag">SQL Server</span>
+                <span class="tech-tag">Azure</span>
+              </div>
+              <div class="flex gap-3">
+                <a href="https://github.com/RobbyBenipal" target="_blank" rel="noopener noreferrer" class="project-link-btn github" aria-label="View source on GitHub">
+                  <i class="fa-brands fa-github text-xs" aria-hidden="true"></i>
+                  GitHub
+                </a>
+                <a href="#" class="project-link-btn demo" aria-label="View live demo (coming soon)">
+                  <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: Sherix Technologies Client Sites -->
+          <article class="project-card fade-in-up delay-200" aria-label="Sherix Technologies Client Sites">
+            <div class="project-img-placeholder">
+              <span class="project-icon text-5xl" aria-hidden="true">💼</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white mb-2">Sherix Technologies Client Sites</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                A suite of modern, responsive client websites built for Sherix Technologies. Features CMS integration, performance optimization, and custom interactive components.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">Node.js</span>
+              </div>
+              <div class="flex gap-3">
+                <a href="https://github.com/RobbyBenipal" target="_blank" rel="noopener noreferrer" class="project-link-btn github" aria-label="View source on GitHub">
+                  <i class="fa-brands fa-github text-xs" aria-hidden="true"></i>
+                  GitHub
+                </a>
+                <a href="#" class="project-link-btn demo" aria-label="View live demo (coming soon)">
+                  <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- "More on GitHub" card -->
+          <div class="project-card fade-in-up delay-300 flex flex-col items-center justify-center p-10 text-center" style="border-style: dashed; border-color: rgba(255,255,255,0.1);">
+            <div class="w-14 h-14 rounded-full flex items-center justify-center mb-4 text-gray-500 text-2xl"
+                 style="background: rgba(255,255,255,0.04);">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </div>
+            <h3 class="text-base font-semibold text-gray-300 mb-2">More on GitHub</h3>
+            <p class="text-gray-500 text-sm mb-6 leading-relaxed">Explore all my repositories and open source contributions.</p>
+            <a href="https://github.com/RobbyBenipal" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm py-2">
+              <i class="fa-brands fa-github text-xs" aria-hidden="true"></i>
+              View Profile
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXPERIENCE SECTION
+         ============================================================ -->
+    <section id="experience" style="background: rgba(255,255,255,0.01);" aria-labelledby="experience-heading">
+      <div class="container mx-auto">
+        <div class="text-center mb-16">
+          <span class="section-tag fade-in-up">My Journey</span>
+          <h2 id="experience-heading" class="section-title fade-in-up delay-100">Work Experience</h2>
+          <div class="section-divider fade-in-up delay-200"></div>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+          <div class="timeline">
+
+            <!-- Experience Item 1 — Current Role -->
+            <div class="timeline-item fade-in-up">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-card">
+                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                  <div>
+                    <h3 class="text-xl font-bold text-white">Software Developer III</h3>
+                    <div class="flex items-center gap-2 mt-1">
+                      <span class="text-cyan-400 font-semibold text-sm">PACCAR Dynacraft</span>
+                      <span class="text-gray-600">·</span>
+                      <span class="text-gray-500 text-sm">Dallas, TX</span>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <span class="timeline-badge">Current</span>
+                    <div class="text-gray-500 text-xs mt-1">2022 — Present</div>
+                  </div>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                  Lead full-stack development of manufacturing systems, internal tooling, and data-driven dashboards used by production teams across multiple facilities.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-400">
+                  <li class="flex items-start gap-2">
+                    <span class="text-cyan-400 mt-0.5 text-xs" aria-hidden="true">▸</span>
+                    Architected and developed real-time manufacturing dashboards using Blazor and SignalR, reducing manual reporting time by 60%.
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-cyan-400 mt-0.5 text-xs" aria-hidden="true">▸</span>
+                    Led Agile sprints and managed cross-functional teams to deliver enterprise software on schedule.
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-cyan-400 mt-0.5 text-xs" aria-hidden="true">▸</span>
+                    Designed and optimized complex SQL Server queries and stored procedures supporting high-throughput production data pipelines.
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-cyan-400 mt-0.5 text-xs" aria-hidden="true">▸</span>
+                    Established CI/CD pipelines using Azure DevOps, improving deployment frequency and reducing release risk.
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-cyan-400 mt-0.5 text-xs" aria-hidden="true">▸</span>
+                    Mentored junior developers and conducted regular code reviews to uphold engineering standards.
+                  </li>
+                </ul>
+                <div class="flex flex-wrap gap-2 mt-5">
+                  <span class="tech-tag">C#</span>
+                  <span class="tech-tag">.NET 6/8</span>
+                  <span class="tech-tag">Blazor</span>
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">SQL Server</span>
+                  <span class="tech-tag">Azure DevOps</span>
+                  <span class="tech-tag">SignalR</span>
+                  <span class="tech-tag">Agile/Scrum</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience Item 2 (placeholder — customize as needed) -->
+            <div class="timeline-item fade-in-up delay-100">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-card">
+                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                  <div>
+                    <h3 class="text-xl font-bold text-white">Software Developer</h3>
+                    <div class="flex items-center gap-2 mt-1">
+                      <span class="text-cyan-400 font-semibold text-sm">Sherix Technologies</span>
+                      <span class="text-gray-600">·</span>
+                      <span class="text-gray-500 text-sm">Remote</span>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <span class="timeline-badge" style="background: rgba(139,92,246,0.1); border-color: rgba(139,92,246,0.25); color: #a78bfa;">Previous</span>
+                    <div class="text-gray-500 text-xs mt-1">2020 — 2022</div>
+                  </div>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                  Developed and maintained client-facing web applications and internal tools for a growing technology agency.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-400">
+                  <li class="flex items-start gap-2">
+                    <span class="text-cyan-400 mt-0.5 text-xs" aria-hidden="true">▸</span>
+                    Built custom web applications using React and ASP.NET Core for multiple clients across various industries.
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-cyan-400 mt-0.5 text-xs" aria-hidden="true">▸</span>
+                    Integrated third-party APIs and payment gateways into client platforms.
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-cyan-400 mt-0.5 text-xs" aria-hidden="true">▸</span>
+                    Maintained and optimized SQL Server databases and improved query performance across legacy systems.
+                  </li>
+                </ul>
+                <div class="flex flex-wrap gap-2 mt-5">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">ASP.NET Core</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">SQL Server</span>
+                  <span class="tech-tag">Git</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Education Item -->
+            <div class="timeline-item fade-in-up delay-200">
+              <div class="timeline-dot" aria-hidden="true" style="background: linear-gradient(135deg, #8b5cf6, #0080ff); box-shadow: 0 0 0 2px #8b5cf6, 0 0 20px rgba(139,92,246,0.4);"></div>
+              <div class="timeline-card">
+                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                  <div>
+                    <h3 class="text-xl font-bold text-white">B.S. Computer Science</h3>
+                    <div class="flex items-center gap-2 mt-1">
+                      <!-- CUSTOMIZE: Replace with actual university name -->
+                      <span class="text-purple-400 font-semibold text-sm">University of North Texas</span>
+                      <span class="text-gray-600">·</span>
+                      <span class="text-gray-500 text-sm">Denton, TX</span>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <span class="timeline-badge" style="background: rgba(139,92,246,0.1); border-color: rgba(139,92,246,0.25); color: #a78bfa;">Education</span>
+                    <div class="text-gray-500 text-xs mt-1">Graduated 2020</div>
+                  </div>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Focused on software engineering, data structures, algorithms, and systems design. Active member of the ACM student chapter.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT SECTION
+         ============================================================ -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="container mx-auto">
+        <div class="text-center mb-16">
+          <span class="section-tag fade-in-up">Get In Touch</span>
+          <h2 id="contact-heading" class="section-title fade-in-up delay-100">Contact Me</h2>
+          <div class="section-divider fade-in-up delay-200"></div>
+          <p class="fade-in-up delay-300 text-gray-400 max-w-xl mx-auto text-sm leading-relaxed">
+            Whether you have a project in mind, a job opportunity, or just want to connect — my inbox is always open. I'll do my best to get back to you promptly.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+
+          <!-- Contact Info -->
+          <div class="lg:col-span-2 space-y-4 fade-in-left">
+
+            <div class="contact-info-card">
+              <div class="contact-icon">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              </div>
+              <div>
+                <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Email</div>
+                <!-- CUSTOMIZE: Replace with real email -->
+                <a href="mailto:robby@benipal.dev" class="text-gray-200 hover:text-cyan-400 transition-colors text-sm font-medium">
+                  robby@benipal.dev
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              </div>
+              <div>
+                <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Location</div>
+                <span class="text-gray-200 text-sm font-medium">Dallas / Denton, Texas</span>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              </div>
+              <div>
+                <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Status</div>
+                <span class="text-gray-200 text-sm font-medium">Open to new opportunities</span>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="pt-4">
+              <p class="text-xs text-gray-500 uppercase tracking-wider mb-4">Find me on</p>
+              <div class="flex gap-3">
+                <a href="https://github.com/RobbyBenipal" target="_blank" rel="noopener noreferrer"
+                   class="social-link" aria-label="GitHub — RobbyBenipal">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://linkedin.com/in/robbybenipal" target="_blank" rel="noopener noreferrer"
+                   class="social-link" aria-label="LinkedIn — Robby Benipal">
+                  <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+                <a href="https://twitch.tv/robbybenipal" target="_blank" rel="noopener noreferrer"
+                   class="social-link" aria-label="Twitch — robbybenipal">
+                  <i class="fa-brands fa-twitch" aria-hidden="true"></i>
+                </a>
+                <a href="mailto:robby@benipal.dev"
+                   class="social-link" aria-label="Send email">
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Contact Form -->
+          <div class="lg:col-span-3 fade-in-right">
+            <form id="contact-form"
+                  class="space-y-4"
+                  aria-label="Contact form"
+                  novalidate>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="contact-name" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Name</label>
+                  <input type="text"
+                         id="contact-name"
+                         name="name"
+                         class="contact-input"
+                         placeholder="Your name"
+                         required
+                         autocomplete="name" />
+                </div>
+                <div>
+                  <label for="contact-email" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Email</label>
+                  <input type="email"
+                         id="contact-email"
+                         name="email"
+                         class="contact-input"
+                         placeholder="your@email.com"
+                         required
+                         autocomplete="email" />
+                </div>
+              </div>
+              <div>
+                <label for="contact-subject" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Subject</label>
+                <input type="text"
+                       id="contact-subject"
+                       name="subject"
+                       class="contact-input"
+                       placeholder="What's this about?"
+                       required />
+              </div>
+              <div>
+                <label for="contact-message" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Message</label>
+                <textarea id="contact-message"
+                          name="message"
+                          rows="6"
+                          class="contact-input resize-none"
+                          placeholder="Tell me about your project or opportunity..."
+                          required></textarea>
+              </div>
+
+              <!-- Note: The form currently simulates submission.
+                   To enable real email sending, integrate a backend service like:
+                   - Formspree (https://formspree.io) — change action to your Formspree endpoint
+                   - EmailJS (https://emailjs.com)
+                   - Netlify Forms (if hosted on Netlify) -->
+              <button type="submit" class="btn-primary w-full justify-center py-4 text-sm">
+                <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+                Send Message
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer aria-label="Site footer">
+    <div class="container mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+
+        <!-- Brand -->
+        <div class="text-center md:text-left">
+          <div class="font-bold text-lg mb-1">
+            <span class="gradient-text">Robby</span>
+            <span class="text-gray-400"> Benipal</span>
+          </div>
+          <p class="text-gray-600 text-xs">Software Engineer · Full Stack Developer</p>
+        </div>
+
+        <!-- Footer Nav -->
+        <nav aria-label="Footer navigation">
+          <ul class="flex flex-wrap justify-center gap-6 text-xs text-gray-500" role="list">
+            <li><a href="#about"      class="hover:text-cyan-400 transition-colors">About</a></li>
+            <li><a href="#skills"     class="hover:text-cyan-400 transition-colors">Skills</a></li>
+            <li><a href="#projects"   class="hover:text-cyan-400 transition-colors">Projects</a></li>
+            <li><a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a></li>
+            <li><a href="#contact"    class="hover:text-cyan-400 transition-colors">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Social Links -->
+        <div class="flex gap-3">
+          <a href="https://github.com/RobbyBenipal" target="_blank" rel="noopener noreferrer"
+             class="social-link w-9 h-9 text-sm" aria-label="GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://linkedin.com/in/robbybenipal" target="_blank" rel="noopener noreferrer"
+             class="social-link w-9 h-9 text-sm" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a href="https://twitch.tv/robbybenipal" target="_blank" rel="noopener noreferrer"
+             class="social-link w-9 h-9 text-sm" aria-label="Twitch">
+            <i class="fa-brands fa-twitch" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:robby@benipal.dev"
+             class="social-link w-9 h-9 text-sm" aria-label="Email">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Divider -->
+      <div class="mt-8 pt-8 border-t border-white/5 text-center">
+        <p class="text-gray-600 text-xs">
+          &copy; <span id="footer-year"></span> Robby Benipal. All rights reserved.
+          Built with <span class="text-cyan-500" aria-label="love">♥</span> using HTML, Tailwind CSS &amp; JavaScript.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dynamic copyright year -->
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Main JS -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
