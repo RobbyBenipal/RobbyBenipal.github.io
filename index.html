@@ -31,31 +31,8 @@
   <!-- Favicon (replace with real favicon) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='78' font-size='80'>💻</text></svg>" />
 
-  <!-- Tailwind CSS (Play CDN — switch to CLI build for production) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            dark: {
-              900: '#0a0a0f',
-              800: '#0f0f1a',
-              700: '#111827',
-              600: '#1f2937',
-            },
-            cyan: { DEFAULT: '#00d4ff' },
-            blue: { DEFAULT: '#0080ff' },
-            purple: { DEFAULT: '#8b5cf6' },
-          },
-          fontFamily: {
-            sans: ['Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
-            mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
-          },
-        },
-      },
-    };
-  </script>
+  <!-- Tailwind CSS (pre-built for production — regenerate with: npx tailwindcss -i assets/css/tailwind-input.css -o assets/css/tailwind.css --minify) -->
+  <link rel="stylesheet" href="assets/css/tailwind.css" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />

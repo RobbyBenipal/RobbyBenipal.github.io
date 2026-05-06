@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-robbybenipal",
+  "version": "1.0.0",
+  "description": "A modern, dark-themed static portfolio website for **Robby Benipal** — Software Engineer & Full Stack Developer based in Dallas / Denton, Texas. Hosted on GitHub Pages.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
