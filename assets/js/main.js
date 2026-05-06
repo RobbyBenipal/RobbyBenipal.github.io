@@ -402,17 +402,26 @@ function initThemeToggle() {
   const toggle = document.getElementById('theme-toggle');
   if (!toggle) return;
 
-  // Keep dark by default (portfolio aesthetic)
+  const syncToggleState = () => {
+    const isLight = document.body.classList.contains('light');
+    toggle.setAttribute('aria-pressed', String(isLight));
+    toggle.setAttribute('title', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+    toggle.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+  };
+
   toggle.addEventListener('click', () => {
     document.body.classList.toggle('light');
     const isLight = document.body.classList.contains('light');
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    syncToggleState();
   });
 
   // Restore preference
   if (localStorage.getItem('theme') === 'light') {
     document.body.classList.add('light');
   }
+
+  syncToggleState();
 }
 
 /* ====================================================
