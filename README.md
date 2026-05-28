@@ -82,5 +82,5 @@ For this user-site repository (`RobbyBenipal.github.io`), the live URL is:
 ## Notes
 
 - Add a real resume as `assets/resume.pdf` to enable the resume download buttons.
-- Add a real profile photo at `assets/images/profile.jpg` if desired.
+- Add a real profile photo at `assets/images/Porfolio Picture.png` if desired.
 
